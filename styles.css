@@ -1,0 +1,84 @@
+:root {
+  --ink: #463945;
+  --paper: #fff4eb;
+  --peach-quartz: #f7b690;
+  --lavender-blue: #c2becb;
+  --flamingo-pink: #f78e98;
+  --lavender-fog: #cec1d1;
+  --pale-peach: #ffd0ba;
+  --line: rgba(70, 57, 69, 0.2);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: radial-gradient(circle at 96% 6%, var(--pale-peach) 0 10%, transparent 10.1%),
+    radial-gradient(circle at 7% 40%, var(--lavender-fog) 0 10%, transparent 10.1%), var(--paper);
+  font-family: "Space Grotesk", Arial, sans-serif;
+}
+
+main { position: relative; max-width: 1120px; margin: 0 auto; padding: 7.5rem 2rem 4rem; }
+
+.intro { position: relative; max-width: 640px; margin-left: clamp(0rem, 3vw, 2.5rem); }
+
+.doodles { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.doodle { position: absolute; font-family: "DM Mono", monospace; line-height: 1; }
+.doodle-loop { top: 3.8rem; right: 2rem; color: #b58caf; font-size: clamp(3.5rem, 7vw, 6rem); transform: rotate(-18deg); }
+.doodle-sparkle { top: 21rem; left: 0.6rem; color: #e79977; font-size: 1.4rem; }
+.doodle-dots { top: 24rem; right: 5%; color: #c07486; font-size: 1.05rem; letter-spacing: 0.2em; transform: rotate(-12deg); }
+
+.eyebrow {
+  margin: 0 0 1.3rem;
+  color: #a95163;
+  font: 0.76rem/1 "DM Mono", monospace;
+  letter-spacing: 0.11em;
+}
+
+h1, h2 { font-family: "Playfair Display", Georgia, serif; font-weight: 600; }
+
+h1 { margin: 0; font-size: clamp(3.6rem, 9vw, 7.2rem); line-height: 1; letter-spacing: -0.025em; }
+h1 span { color: #ba6174; white-space: nowrap; }
+
+.bio { max-width: 630px; margin: 2.5rem 0 0; font-size: clamp(1.1rem, 2vw, 1.35rem); line-height: 1.6; }
+.flower { position: absolute; user-select: none; pointer-events: none; }
+.intro { position: relative; }
+.flower-one { right: -3.5rem; top: -4rem; color: var(--flamingo-pink); font-size: clamp(1.75rem, 4vw, 3.6rem); opacity: 0.8; transform: rotate(14deg); }
+.flower-two { right: -1.5rem; bottom: -5rem; color: #9f91ac; font-size: clamp(2rem, 5vw, 4.25rem); opacity: 0.75; transform: rotate(-16deg); }
+
+.artwork {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(2rem, 7vw, 7rem);
+  align-items: center;
+  margin-top: 8rem;
+  padding-top: 2rem;
+  border-top: 1px dashed var(--line);
+}
+
+h2 { margin: 0; font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.05; letter-spacing: -0.015em; }
+.artist { margin: 1rem 0 2rem; color: #a95163; font: 0.78rem/1.3 "DM Mono", monospace; }
+.artwork-copy > p:last-child { line-height: 1.65; }
+
+figure { margin: 0; position: relative; }
+figure::before { content: ""; position: absolute; z-index: -1; width: 82%; height: 82%; right: -1.4rem; bottom: -1.4rem; background: var(--lavender-blue); border-radius: 50% 50% 42% 58% / 51% 39% 61% 49%; }
+img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 42% 58% 43% 57% / 48% 42% 58% 52%; box-shadow: 0 1rem 2.2rem rgba(70, 57, 69, 0.16); }
+figcaption { margin-top: 0.9rem; color: #715e70; font-size: 0.76rem; }
+a { color: inherit; text-underline-offset: 0.18em; }
+
+footer { display: flex; justify-content: space-between; max-width: 1120px; margin: 0 auto; padding: 1.5rem 2rem 2.5rem; border-top: 1px dashed var(--line); color: #715e70; font: 0.72rem "DM Mono", monospace; }
+
+@media (max-width: 680px) {
+  main { padding-top: 5rem; }
+  .intro { margin-left: 0; max-width: 590px; }
+  .doodle-loop { top: 0.4rem; right: 1.2rem; font-size: 3.4rem; }
+  .doodle-sparkle { top: 24rem; left: 0.1rem; }
+  .doodle-dots { display: none; }
+  .artwork { grid-template-columns: 1fr; margin-top: 5rem; }
+  .artwork-copy { max-width: 520px; }
+  figure { margin-right: 1.4rem; }
+  .flower-one { right: 0; top: -3.3rem; }
+  .flower-two { right: 0; bottom: -4.7rem; }
+  footer { gap: 1rem; }
+}
